@@ -26,9 +26,9 @@
 
 /* Begin PBXFileReference section */
 		B0BFF7A21E4E444400452EBE /* Homework3_xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Homework3_xcode; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0BFF7AC1E4E44D000452EBE /* file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = file.cpp; path = "../../Homework 3/file.cpp"; sourceTree = "<group>"; };
-		B0BFF7AD1E4E44D000452EBE /* linear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = linear.cpp; path = "../../Homework 3/linear.cpp"; sourceTree = "<group>"; };
-		B0BFF7AE1E4E44D000452EBE /* Testmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Testmain.cpp; path = "../../Homework 3/Testmain.cpp"; sourceTree = "<group>"; };
+		B0BFF7AC1E4E44D000452EBE /* file.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = file.cpp; path = "../Homework 3/file.cpp"; sourceTree = "<group>"; };
+		B0BFF7AD1E4E44D000452EBE /* linear.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = linear.cpp; path = "../Homework 3/linear.cpp"; sourceTree = "<group>"; };
+		B0BFF7AE1E4E44D000452EBE /* Testmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Testmain.cpp; path = "../Homework 3/Testmain.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +254,7 @@
 				B0BFF7AB1E4E444400452EBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
