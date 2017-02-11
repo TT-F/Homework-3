@@ -5,19 +5,35 @@
 //  Created by Steven Shi on 2/10/17.
 //  Copyright © 2017 Liuyi Shi. All rights reserved.
 //
-
+#include<iostream>
+bool somePredicate(double x)
+{
+	return x < 0;
+}
 // Return false if the somePredicate function returns false for at
 // least one of the array elements; return true otherwise.
 bool allTrue(const double a[], int n)
 {
-    return false;  // This is not always correct.
+	if (n == 0)
+		return true;
+	if (n == 1)
+		return somePredicate(a[n-1]);
+	if (somePredicate(a[n-1]) && allTrue(a,n-1))
+		return true;
+	else
+		return false; 
 }
 
 // Return the number of elements in the array for which the
 // somePredicate function returns false.
 int countFalse(const double a[], int n)
 {
-    return -999;  // This is incorrect.
+	int count = 0;
+	if (n == 0)
+		return 0;
+	if (somePredicate(a[n-1]))
+		count = 1;
+	return count + countFalse(a, n-1);
 }
 
 // Return the subscript of the first element in the array for which
@@ -25,7 +41,10 @@ int countFalse(const double a[], int n)
 // element, return -1.
 int firstFalse(const double a[], int n)
 {
-    return -999;  // This is incorrect.
+	if (n != 0)
+	{
+		 
+	}
 }
 
 // Return the subscript of the smallest double in the array (i.e.,
@@ -57,3 +76,32 @@ bool includes(const double a1[], int n1, const double a2[], int n2)
 {
     return false;  // This is not always correct.
 }
+
+
+int main()
+{
+	double a[] = { -2, -33, -4, -5, -66 };
+	double b[] = { 2, 33, 4, 5, 66 };
+	double c[] = { 2, 33, 4, 5, -66 };
+	double d[] = { 2, 33, 4, -5, 66 };
+	double e[] = { 2, 33, -4, 5, 66 };
+	double f[] = { 2, -33, 4, 5, 66 };
+	double g[] = { -2, 33, 4, 5, 66 };
+	double h[] = { -2, -33, 4, 5, 66 };
+	double i[] = { 2, -33, -4, 5, 66 };
+	double j[] = { 2, 33, -4, -5, 66 };
+	double k[] = { 2, 33, 4, -5, -66 };
+	double l[] = { 2, 33, -4, -5, -66 };
+	double m[] = { -2, -33, -4, 5, 66 };
+	double n[] = { 2, -33, -4, -5, 66 };
+	
+	double* ptr = n;
+		if (allTrue(ptr, 5))
+			std::cout << "true " << std::endl;
+		else
+			std::cout << "false " << std::endl;
+	std::cout << countFalse(ptr, 5) << std::endl;
+	std::cout << firstFalse(b, 5) << std::endl;
+
+}
+	
