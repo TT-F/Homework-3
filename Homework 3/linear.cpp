@@ -41,10 +41,17 @@ int countFalse(const double a[], int n)
 // element, return -1.
 int firstFalse(const double a[], int n)
 {
-	if (n != 0)
-	{
-		 
-	}
+	if (n <= 0)
+		return -1;
+	if (firstFalse(a, n - 1) != -1)
+		return firstFalse(a, n - 1);
+	else if (somePredicate(a[n - 1]))
+		return n - 1;
+	else
+		return -1; 
+
+
+	
 }
 
 // Return the subscript of the smallest double in the array (i.e.,
@@ -54,7 +61,25 @@ int firstFalse(const double a[], int n)
 // examine, return -1.
 int indexOfMin(const double a[], int n)
 {
-    return -999;  // This is incorrect.
+	if (n <= 0)
+		return -1;
+	if (n == 1)
+		return 0;
+	if (n == 2)
+	{
+		if (a[n - 2] > a[n - 1])
+			return n - 1;
+		else
+			return n - 2;
+	}
+	else if (a[indexOfMin(a, n - 1)] < a[n - 1])
+	{
+		return indexOfMin(a, n - 1);
+	}
+	else
+		return n - 1;
+	
+	
 }
 
 // If all n2 elements of a2 appear in the n1 element array a1, in
@@ -74,7 +99,7 @@ int indexOfMin(const double a[], int n)
 //    10 20 20
 bool includes(const double a1[], int n1, const double a2[], int n2)
 {
-    return false;  // This is not always correct.
+    
 }
 
 
@@ -95,13 +120,14 @@ int main()
 	double m[] = { -2, -33, -4, 5, 66 };
 	double n[] = { 2, -33, -4, -5, 66 };
 	
-	double* ptr = n;
+	double* ptr = e;
 		if (allTrue(ptr, 5))
 			std::cout << "true " << std::endl;
 		else
 			std::cout << "false " << std::endl;
 	std::cout << countFalse(ptr, 5) << std::endl;
-	std::cout << firstFalse(b, 5) << std::endl;
+	std::cout << firstFalse(ptr, 5) << std::endl;
+	std::cout << indexOfMin(ptr, 5) << std::endl;
 
 }
 	
