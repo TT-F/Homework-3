@@ -121,36 +121,36 @@ bool includes(const double a1[], int n1, const double a2[], int n2)
 }
 
 
-int main()
-{
-	double a[] = { -2, -33, -4, -5, -66 };
-	double b[] = { 2, 33, 4, 5, 66 };
-	double c[] = { 2, 33, 4, 5, -66 };
-	double d[] = { 2, 33, 4, -5, 66 };
-	double e[] = { 2, 33, -4, 5, 66 };
-	double f[] = { 2, -33, 4, 5, 66 };
-	double g[] = { -2, 33, 4, 5, 66 };
-	double h[] = { -2, -33, 4, 5, 66 };
-	double i[] = { 2, -33, -4, 5, 66 };
-	double j[] = { 2, 33, -4, -5, 66 };
-	double k[] = { 2, 33, 4, -5, -66 };
-	double l[] = { 2, 33, -4, -5, -66 };
-	double m[] = { -2, -33, -4, 5, 66 };
-	double n[] = { 2, -33, -4, -5, 66 };
-	double o[] = { 2, -33, 4, 5, 66 };
-	double p[] = { 2,5,6};
-	
-	/*double* ptr = e;
-		if (allTrue(ptr, 5))
-			std::cout << "true " << std::endl;
-		else
-			std::cout << "false " << std::endl;
-	std::cout << countFalse(ptr, 5) << std::endl;
-	std::cout << firstFalse(ptr, 5) << std::endl;
-	std::cout << indexOfMin(ptr, 5) << std::endl;*/
-	if(includes(o,5,p,3))
-		std::cout << "true " << std::endl;
-	else
-		std::cout << "false " << std::endl;
-}
+//int main()
+//{
+//	double a[] = { -2, -33, -4, -5, -66 };
+//	double b[] = { 2, 33, 4, 5, 66 };
+//	double c[] = { 2, 33, 4, 5, -66 };
+//	double d[] = { 2, 33, 4, -5, 66 };
+//	double e[] = { 2, 33, -4, 5, 66 };
+//	double f[] = { 2, -33, 4, 5, 66 };
+//	double g[] = { -2, 33, 4, 5, 66 };
+//	double h[] = { -2, -33, 4, 5, 66 };
+//	double i[] = { 2, -33, -4, 5, 66 };
+//	double j[] = { 2, 33, -4, -5, 66 };
+//	double k[] = { 2, 33, 4, -5, -66 };
+//	double l[] = { 2, 33, -4, -5, -66 };
+//	double m[] = { -2, -33, -4, 5, 66 };
+//	double n[] = { 2, -33, -4, -5, 66 };
+//	double o[] = { 2, -33, 4, 5, 66 };
+//	double p[] = { 2,5,6};
+//	
+//	double* ptr = e;
+//		if (allTrue(ptr, 5))
+//			std::cout << "true " << std::endl;
+//		else
+//			std::cout << "false " << std::endl;
+//	std::cout << countFalse(ptr, 5) << std::endl;
+//	std::cout << firstFalse(ptr, 5) << std::endl;
+//	std::cout << indexOfMin(ptr, 5) << std::endl;
+//	if(includes(o,5,p,3))
+//		std::cout << "true " << std::endl;
+//	else
+//		std::cout << "false " << std::endl;
+//}
 	
