@@ -99,7 +99,25 @@ int indexOfMin(const double a[], int n)
 //    10 20 20
 bool includes(const double a1[], int n1, const double a2[], int n2)
 {
-    
+	if (n1 <= 0 || n2 <= 0)
+		return false;
+	if (n1 < n2)
+		return false;
+	if (n2 == 1 && a1[n1-1] == a2[0])
+		return true; 
+	if (a1[n1 - 1] == a2[n2 - 1])
+	{
+		if (includes(a1, n1 - 1, a2, n2 - 1))
+			return true;
+		else
+			return false;
+	}
+	else if (includes(a1, n1 - 1, a2, n2))
+		return true;
+	else
+		return false;
+		
+
 }
 
 
@@ -119,15 +137,20 @@ int main()
 	double l[] = { 2, 33, -4, -5, -66 };
 	double m[] = { -2, -33, -4, 5, 66 };
 	double n[] = { 2, -33, -4, -5, 66 };
+	double o[] = { 2, -33, 4, 5, 66 };
+	double p[] = { 2,5,6};
 	
-	double* ptr = e;
+	/*double* ptr = e;
 		if (allTrue(ptr, 5))
 			std::cout << "true " << std::endl;
 		else
 			std::cout << "false " << std::endl;
 	std::cout << countFalse(ptr, 5) << std::endl;
 	std::cout << firstFalse(ptr, 5) << std::endl;
-	std::cout << indexOfMin(ptr, 5) << std::endl;
-
+	std::cout << indexOfMin(ptr, 5) << std::endl;*/
+	if(includes(o,5,p,3))
+		std::cout << "true " << std::endl;
+	else
+		std::cout << "false " << std::endl;
 }
 	
