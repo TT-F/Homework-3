@@ -1,5 +1,4 @@
-
-
+#include <iostream>
 
 // Return the number of ways that all n2 elements of a2 appear
 // in the n1 element array a1 in the same order (though not
@@ -14,7 +13,21 @@
 //	50 40 30			3
 int countIncludes(const double a1[], int n1, const double a2[], int n2)
 {
-	return -999;  // This is incorrect.
+	int count = 0;
+	if (n1 <= 0 || n2 <= 0)
+		return 0;
+	if (n1 < n2)
+		return 0;
+	if (n2 == 1 && a1[n1 - 1] == a2[0])
+		count++;
+	if (a1[n1 - 1] == a2[n2 - 1])
+	{
+		if (countIncludes(a1, n1 - 1, a2, n2 - 1) > 0)
+			count += countIncludes(a1, n1 - 1, a2, n2 - 1);
+	}
+	if (countIncludes(a1, n1 - 1, a2, n2) > 0)
+		count += countIncludes(a1, n1 - 1, a2, n2);
+	return count;
 }
 
 // Exchange two doubles
@@ -80,7 +93,55 @@ void separate(double a[], int n, double separator,
 // Rearrange the elements of the array so that
 // a[0] >= a[1] >= a[2] >= ... >= a[n-2] >= a[n-1]
 // If n <= 1, do nothing.
-void order(double a[], int n)
+void order(double a[], int n)  //(Hint: Using the separate function, the order function can be written in fewer than eight short lines of code.)
 {
-	return;  // This is not always correct.
+	if (n <= 1)
+		return;
+	int fng = 0;
+	int fs = 0;
+	
+	separate(a, n, a[n - 1], fng, fs);
+	
+	if (fs != n)
+		order(a, n);
+	else 
+		order(a, n - 1);
 }
+
+int main()
+{
+	/*double a[] = { 10,50,40,20,50,40,30 };
+	double b[] = { 10,20,40 };
+	double c[] = { 10,40,30 };
+	double d[] = { 20,10,40 };
+	double e[] = { 50,40,30 };
+	std::cout << countIncludes(a, 7, d, 3);
+*/
+	double aa[] = { 5,6,2,3,1 };
+	double bb[] = { 123,343,234,5123,54,23,1,123,553,21,24,676,2,1 };
+	double cc[] = { 123,343,234,543,54,23,1,123,553,21,24,676,2,1 };
+	/*int fg = 0;
+	int fs = 0;
+	separate(aa, 5, 3, fg, fs);
+	for (int i = 0;i < 5;i++)
+		std::cout << aa[i];
+	std::cout << std::endl;
+	std::cout << fg << std::endl;
+	std::cout << fs << std::endl;*/
+	order(cc, 14);
+	for (int i = 0;i < 14;i++)
+		std::cout << cc[i] << " ";
+}
+
+	////For Debugging 
+	//std::cout << "n " << n << " a " << a[n - 1] << std::endl;
+	//for (int i = 0;i < 14;i++)
+	//	std::cout <<"(" <<i<<")" << a[i] << " ";
+	//std::cout  << std::endl << "----------------------------------------------------" << std::endl;
+	////end of Debugging 
+
+	////For Debugging 
+	//std::cout << "fng " << fng << " " << a[fng] << std::endl;
+	//std::cout << "fs " << fs << " " << a[fs] << std::endl;
+	//std::cout << std::endl << "=====================================================" << std::endl;
+	////end of Debugging 
