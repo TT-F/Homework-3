@@ -13,21 +13,19 @@
 //	50 40 30			3
 int countIncludes(const double a1[], int n1, const double a2[], int n2)
 {
-	int count = 0;
-	if (n1 <= 0 || n2 <= 0)
+
+
+	if (n2 <= 0)
+		return 1;
+	else if (n1 <= 0)
 		return 0;
 	if (n1 < n2)
 		return 0;
-	if (n2 == 1 && a1[n1 - 1] == a2[0])
-		count++;
 	if (a1[n1 - 1] == a2[n2 - 1])
-	{
-		if (countIncludes(a1, n1 - 1, a2, n2 - 1) > 0)
-			count += countIncludes(a1, n1 - 1, a2, n2 - 1);
-	}
-	if (countIncludes(a1, n1 - 1, a2, n2) > 0)
-		count += countIncludes(a1, n1 - 1, a2, n2);
-	return count;
+		return countIncludes(a1, n1 - 1, a2, n2 - 1) + countIncludes(a1, n1 - 1, a2, n2);
+	else
+		return countIncludes(a1, n1 - 1, a2, n2);
+
 }
 
 // Exchange two doubles

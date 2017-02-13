@@ -97,14 +97,16 @@ int indexOfMin(const double a[], int n)
 //    50 30 20
 // or
 //    10 20 20
-bool includes(const double a1[], int n1, const double a2[], int n2)
+bool includes(const double a1[], int n1, const double a2[], int n2) //modified 
 {
-	if (n1 <= 0 || n2 <= 0)
+	if (n2 == 0)
+		return true;
+	if (n1 <= 0 || n2 < 0)
 		return false;
 	if (n1 < n2)
 		return false;
-	if (n2 == 1 && a1[n1-1] == a2[0])
-		return true; 
+	if (n2 == 1 && a1[n1 - 1] == a2[0])
+		return true;
 	if (a1[n1 - 1] == a2[n2 - 1])
 	{
 		if (includes(a1, n1 - 1, a2, n2 - 1))
@@ -116,8 +118,6 @@ bool includes(const double a1[], int n1, const double a2[], int n2)
 		return true;
 	else
 		return false;
-		
-
 }
 
 
